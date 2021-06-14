@@ -8,7 +8,6 @@ jest.mock("next-auth/client");
 describe("SignInButton component", () => {
   it("renders correctly when user is not authenticated", () => {
     const useSessionMocked = mocked(useSession);
-
     useSessionMocked.mockReturnValueOnce([null, false]);
 
     render(<SignInButton />);
@@ -18,7 +17,6 @@ describe("SignInButton component", () => {
 
   it("renders correctly when user is authenticated", () => {
     const useSessionMocked = mocked(useSession);
-
     useSessionMocked.mockReturnValueOnce([
       {
         user: {
