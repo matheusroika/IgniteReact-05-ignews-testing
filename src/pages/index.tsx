@@ -5,6 +5,7 @@ import { stripe } from "../services/stripe";
 
 import { SubscribeButton } from "../components/SubscribeButton";
 import styles from "./home.module.scss";
+import { Header } from "../components/Header";
 
 interface HomeProps {
   product: {
@@ -19,6 +20,8 @@ export default function Home({ product }: HomeProps) {
       <Head>
         <title>Home | ig.news</title>
       </Head>
+
+      <Header />
       <main className={styles.contentContainer}>
         <section className={styles.hero}>
           <span>👏 Hey, welcome</span>

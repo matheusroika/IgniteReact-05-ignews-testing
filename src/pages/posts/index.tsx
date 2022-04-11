@@ -6,6 +6,7 @@ import { RichText } from "prismic-dom";
 
 import { getPrismicClient } from "../../services/prismic";
 import styles from "./styles.module.scss";
+import { Header } from "../../components/Header";
 
 interface Post {
   slug: string;
@@ -25,6 +26,7 @@ export default function Posts({ posts }: PostsProps) {
         <title> Posts | ig.news </title>
       </Head>
 
+      <Header />
       <main className={styles.container}>
         <div className={styles.postList}>
           {posts.map((post) => (

@@ -1,10 +1,11 @@
-import { GetServerSideProps, GetStaticProps } from "next"
-import { getSession, useSession } from "next-auth/client"
+import { GetStaticProps } from "next"
+import { useSession } from "next-auth/client"
 import Head from "next/head"
 import Link from "next/link"
 import { useRouter } from "next/router"
 import { RichText } from "prismic-dom"
 import { useEffect } from "react"
+import { Header } from "../../../components/Header"
 import { getPrismicClient } from "../../../services/prismic"
 
 import styles from '../post.module.scss'
@@ -34,6 +35,7 @@ export default function PostPreview({ post }: PostPreviewProps) {
       <title>{post.title} | ig.news</title>
     </Head>
 
+    <Header />
     <main className={styles.container}>
       <article className={styles.post}>
         <h1>{post.title}</h1>
